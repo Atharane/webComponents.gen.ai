@@ -2,27 +2,16 @@
 import { useState } from "react"
 
 import Footer1 from "./components/Footer/footer1"
-import Image from 'next/image'
-import Footer2 from './components/Footer/footer2'
 import PromptInput from "./components/promptInput"
-import Navbar1 from './components/Navbar/navbar1'
-import Navbar2 from './components/Navbar/navbar2'
-import ServiceSection from './components/ServiceSection/serviceSection'
+import Navbar2 from "./components/Navbar/navbar2"
+import ServiceSection from "./components/ServiceSection/serviceSection"
 import PreviewHeader from "./components/previewHeader"
 
-interface Service {
-  ServiceTitle: string;
-  ServiceDescription:string;
-}
-
 export default function Home() {
-
-  const [service , setService] = useState<Service>({ServiceTitle:"tits", ServiceDescription:"tits are great"});
-  
-  // interface Service {
-  //   "Service Title": string
-  //   "Service Description": string
-  // }
+  interface Service {
+    ServiceTitle: string
+    ServiceDescription: string
+  }
 
   interface SiteMetadata {
     Title: string
@@ -36,19 +25,27 @@ export default function Home() {
   }
 
   const [siteMetadata, setSiteMetadata] = useState<SiteMetadata | null>(null)
+  const service: Service = {
+    ServiceTitle: "tits",
+    ServiceDescription: "tits are great",
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-900">
-      <Navbar2 title="HEM "></Navbar2>
-      <ServiceSection s1={{ServiceTitle:"tits", ServiceDescription:"tits are great"}} s2={service} s3={service} s4={service}></ServiceSection>
       <PromptInput setSiteMetadata={setSiteMetadata} />
 
       {siteMetadata && (
         <div className="w-full shadow-2xl p-12 bg-white/10 rounded-lg space-y-4">
           <PreviewHeader />
 
-          <div id="site-preview">
-            <Navbar2 title="HEM "></Navbar2>
+          <div className="space-y-4" id="site-preview">
+            <Navbar2 title="HEM"></Navbar2>
+            <ServiceSection
+              s1={service}
+              s2={service}
+              s3={service}
+              s4={service}
+            ></ServiceSection>
             <Footer1 footerline="lorem ispum dolor sit" />
           </div>
         </div>
