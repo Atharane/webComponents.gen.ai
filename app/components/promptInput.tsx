@@ -19,6 +19,8 @@ const PromptInput = ({
     //   },
     // })
     // const data = await response.json()
+
+    setSiteMetadata(dummyData)
   }
 
   return (
@@ -34,35 +36,33 @@ const PromptInput = ({
           </p>
 
           <div className="mt-7 sm:mt-12 mx-auto max-w-xl relative">
-            <form>
-              <div className="relative z-10 flex space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100 dark:bg-slate-900 dark:border-gray-700 dark:shadow-gray-900/[.2]">
-                <div className="flex-[1_0_0%]">
-                  <label
-                    htmlFor="hs-search-article-1"
-                    className="block text-sm text-gray-700 font-medium dark:text-white"
-                  >
-                    <span className="sr-only">Search article</span>
-                  </label>
-                  <textarea
-                    rows={1}
-                    name="hs-search-article-1"
-                    id="hs-search-article-1"
-                    className="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-transparent focus:outline-none focus:ring-0 dark:bg-slate-900 dark:border-transparent dark:text-gray-400 dark:focus:border-transparent dark:focus:ring-0"
-                    placeholder="Affiliate marketing website"
-                    value={prompt}
-                    onChange={e => setPrompt(e.target.value)}
-                  />
-                </div>
-                <div className="flex-[0_0_auto]">
-                  <button
-                    className="w-[46px] h-[46px] inline-flex justify-center items-center gap-x-2 text-lg font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    onClick={fetchLLMResponse}
-                  >
-                    ➤
-                  </button>
-                </div>
+            <div className="relative z-10 flex space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100 dark:bg-slate-900 dark:border-gray-700 dark:shadow-gray-900/[.2]">
+              <div className="flex-[1_0_0%]">
+                <label
+                  htmlFor="hs-search-article-1"
+                  className="block text-sm text-gray-700 font-medium dark:text-white"
+                >
+                  <span className="sr-only">Search article</span>
+                </label>
+                <textarea
+                  rows={1}
+                  name="hs-search-article-1"
+                  id="hs-search-article-1"
+                  className="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-transparent focus:outline-none focus:ring-0 dark:bg-slate-900 dark:border-transparent dark:text-gray-400 dark:focus:border-transparent dark:focus:ring-0"
+                  placeholder="Affiliate marketing website"
+                  value={prompt}
+                  onChange={e => setPrompt(e.target.value)}
+                />
               </div>
-            </form>
+              <div className="flex-[0_0_auto]">
+                <button
+                  className="w-[46px] h-[46px] inline-flex justify-center items-center gap-x-2 text-lg font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                  onClick={fetchLLMResponse}
+                >
+                  ➤
+                </button>
+              </div>
+            </div>
 
             <div className="hidden md:block absolute top-0 end-0 -translate-y-12 translate-x-20">
               <svg
