@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Footer1 from './components/Footer/footer1'
+import Footer2 from './components/Footer/footer2'
 
 export default function Home() {
   return (
@@ -108,6 +110,9 @@ export default function Home() {
           </p>
         </a>
       </div>
+      {/* <Footer1 footerline="Your footer text"></Footer1>
+      <Footer2 footerline="Your footer text"></Footer2> */} 
+      {/* Uncomment to test the footers */}
     </main>
   )
 }
