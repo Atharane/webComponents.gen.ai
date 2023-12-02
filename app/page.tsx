@@ -110,9 +110,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-      {/* <Footer1 footerline="Your footer text"></Footer1>
-      <Footer2 footerline="Your footer text"></Footer2> */} 
-      {/* Uncomment to test the footers */}
     </main>
   )
 }
