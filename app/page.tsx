@@ -29,7 +29,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-900">
 
       <PromptInput setSiteMetadata={setSiteMetadata} />
-            
+
       {siteMetadata && (
         <div className="w-full shadow-2xl p-12 bg-white/10 rounded-lg">
           <Navbar2 title="HEM "></Navbar2>
