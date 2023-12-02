@@ -2,8 +2,8 @@ const PreviewHeader = () => {
   const copyGeneratedSiteCode = () => {
     const sitePreview = document.getElementById("site-preview")
     const sitePreviewInnerHTML = sitePreview?.innerHTML
-    console.log(`~ sitePreviewInnerHTML:`, sitePreviewInnerHTML)
     sitePreviewInnerHTML && navigator.clipboard.writeText(sitePreviewInnerHTML)
+    return sitePreviewInnerHTML
   }
 
   return (
@@ -14,7 +14,34 @@ const PreviewHeader = () => {
       >
         Copy Code
       </button>
-      <button className="p-2 bg-blue-600 rounded-sm">
+      <button
+        className="p-2 bg-blue-600 rounded-sm"
+        onClick={() => {
+          ;(async () => {
+            const response = await fetch(
+              "https://codesandbox.io/api/v1/sandboxes/define?json",
+              {
+                body: JSON.stringify({
+                  files: {
+                    "index.html": {
+                      content: copyGeneratedSiteCode(),
+                    },
+                  },
+                }),
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                },
+                method: "POST",
+              }
+            )
+            const data = await response.json()
+            const sandbox_id = data.sandbox_id
+            const sandBoxUrl = `https://codesandbox.io/s/${sandbox_id}`
+            window.open(sandBoxUrl, "_blank")
+          })()
+        }}
+      >
         Open in CodeSandbox
       </button>
     </div>
