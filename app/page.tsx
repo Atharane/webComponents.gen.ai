@@ -1,4 +1,6 @@
-import Image from "next/image"
+import Image from 'next/image'
+import Footer1 from './components/Footer/footer1'
+import Footer2 from './components/Footer/footer2'
 import PromptInput from "./components/promptInput"
 
 export default function Home() {
