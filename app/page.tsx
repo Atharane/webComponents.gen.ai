@@ -18,7 +18,7 @@ interface Service {
 export default function Home() {
 
   const [service , setService] = useState<Service>({ServiceTitle:"tits", ServiceDescription:"tits are great"});
-  
+
   // interface Service {
   //   "Service Title": string
   //   "Service Description": string
