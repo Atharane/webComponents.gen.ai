@@ -1,8 +1,13 @@
 "use client"
 
 import { useState } from "react"
+import dummyData from "../../model/dummy.json"
 
-const PromptInput = () => {
+const PromptInput = ({
+  setSiteMetadata,
+}: {
+  setSiteMetadata: (siteMetadata: any) => void
+}) => {
   const [prompt, setPrompt] = useState("")
 
   const fetchLLMResponse = async () => {
@@ -13,9 +18,7 @@ const PromptInput = () => {
     //     "Content-Type": "application/json",
     //   },
     // })
-
     // const data = await response.json()
-    console.log("fetching...")
   }
 
   return (
