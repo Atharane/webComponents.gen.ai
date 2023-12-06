@@ -65,8 +65,9 @@ const PromptInput = ({
   }
 
   const handleSubmit = async () => {
-    // setSiteMetadata(null)
-    let loopLimit = 10
+    setSiteMetadata(null)
+    setPrompt("")
+    let loopLimit = 50
     while (loopLimit--) {
       const response = await fetchLLMResponse()
       if (response) {
@@ -107,6 +108,12 @@ const PromptInput = ({
                   className="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-transparent focus:outline-none focus:ring-0 dark:bg-slate-900 dark:border-transparent dark:text-gray-400 dark:focus:border-transparent dark:focus:ring-0"
                   placeholder="Affiliate marketing website"
                   value={prompt}
+                  onKeyDown={e => {
+                    console.log("e.key", e.key)
+                    if (e.key === "Enter") {
+                      handleSubmit()
+                    }
+                  }}
                   onChange={e => setPrompt(e.target.value)}
                 />
               </div>
