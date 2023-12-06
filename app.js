@@ -15,8 +15,8 @@ const data = {
   "Footer": "",
   "Image Description": ""
   }
-  
-  Requirement : 
+
+  Requirement :
   $$$
   Generate a HoneyMoon Planner Website
   $$$`,
