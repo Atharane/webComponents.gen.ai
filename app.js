@@ -1,6 +1,4 @@
-
-
-let i = 10
+let i = 10;
 while (i--) {
-  fetchLLMResponse().then((data) => console.log(data))
+  fetchLLMResponse().then((data) => console.log(data));
 }
