@@ -10,17 +10,73 @@ const PromptInput = ({
 }) => {
   const [prompt, setPrompt] = useState("")
 
-  const fetchLLMResponse = async () => {
-    // const response = await fetch("http://localhost:8000/llm", {
-    //   method: "POST",
-    //   body: JSON.stringify({ prompt }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    // const data = await response.json()
+  const url =
+    "https://test-atg-openai.openai.azure.com/openai/deployments/text-davinci-002/completions?api-version=2023-09-15-preview"
 
-    setSiteMetadata(dummyData)
+  const data = {
+    prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate the BrandName, Title, Heading , Short Description , four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
+
+  Format:
+  {
+  "BrandName": "",
+  "Title": "",
+  "Heading": "",
+  "ShortDescription": "",
+  "Service1": {"ServiceTitle": "", "ServiceDescription": ""},
+  "Service2": {"ServiceTitle": "", "ServiceDescription": ""},
+  "Service3": {"ServiceTitle": "", "ServiceDescription": ""},
+  "Service4": {"ServiceTitle": "", "ServiceDescription": ""},
+  "Footer": "",
+  "ImageDescription": ""
+  }
+  
+  Requirement : 
+  $$$
+  ${prompt}
+  $$$`,
+    max_tokens: 3000,
+    temperature: 0.1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+    top_p: 0.5,
+    best_of: 1,
+    stop: null,
+  }
+
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "api-key": "d92f204755a24159aa49bedda4493e44",
+    },
+    body: JSON.stringify(data),
+  }
+
+  const fetchLLMResponse = async () => {
+    try {
+      const response = await fetch(url, options)
+      const data = await response.json()
+      console.log(`🚀 .text:`, data.choices[0].text)
+      return JSON.parse(data.choices[0].text)
+    } catch (error) {
+      console.log(error)
+      return undefined
+    }
+  }
+
+  const handleSubmit = async () => {
+    // setSiteMetadata(null)
+    let loopLimit = 10
+    while (loopLimit--) {
+      const response = await fetchLLMResponse()
+      if (response) {
+        console.log(response)
+        setSiteMetadata(response)
+        break
+      }
+      await new Promise(resolve => setTimeout(resolve, 1000))
+    }
+    if (loopLimit === 0) setSiteMetadata(dummyData)
   }
 
   return (
@@ -57,7 +113,7 @@ const PromptInput = ({
               <div className="flex-[0_0_auto]">
                 <button
                   className="w-[46px] h-[46px] inline-flex justify-center items-center gap-x-2 text-lg font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  onClick={fetchLLMResponse}
+                  onClick={handleSubmit}
                 >
                   ➤
                 </button>
