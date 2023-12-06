@@ -14,7 +14,7 @@ const PromptInput = ({
     "https://test-atg-openai.openai.azure.com/openai/deployments/text-davinci-002/completions?api-version=2023-09-15-preview"
 
   const data = {
-    prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate a relevant Website Name, Heading, short description, four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
+    prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate a relevant Website name, Heading, short description, four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
 
   Format:
   {
@@ -88,9 +88,9 @@ const PromptInput = ({
             Translate text to code
           </h1>
 
-          <p className="mt-3 text-gray-600 dark:text-gray-400">
+          {/* <p className="mt-3 text-gray-600 dark:text-gray-400">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
+          </p> */}
 
           <div className="mt-7 sm:mt-12 mx-auto max-w-xl relative">
             <div className="relative z-10 flex space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100 dark:bg-slate-900 dark:border-gray-700 dark:shadow-gray-900/[.2]">
