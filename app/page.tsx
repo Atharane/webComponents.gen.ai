@@ -26,9 +26,24 @@ export default function Home() {
   }
 
   const [siteMetadata, setSiteMetadata] = useState<SiteMetadata | null>(null)
-  const service: Service = {
-    ServiceTitle: "bread",
-    ServiceDescription: "bread is great",
+  const service1: Service = {
+    ServiceTitle: "Customized Itineraries",
+    ServiceDescription: "We create personalized honeymoon itineraries based on your preferences and budget.",
+  }
+
+  const service2: Service = {
+    ServiceTitle:"Luxury Accommodations",
+    ServiceDescription:"We offer a wide range of luxury accommodations to make your honeymoon extra special.",
+  }
+
+  const service3: Service = {
+    ServiceTitle:"Romantic Activities",
+    ServiceDescription:"From candlelit dinners to couples massages, we help you plan the most romantic activities for your honeymoon.",
+  }
+
+  const service4: Service = {
+    ServiceTitle:"Expert Advice",
+    ServiceDescription:"Our team of experienced travel experts are always available to provide you with expert advice and recommendations for your honeymoon.",
   }
 
   return (
@@ -40,17 +55,17 @@ export default function Home() {
           <PreviewHeader />
 
           <div className="space-y-4" id="site-preview">
-            <Navbar2 title="HEM"></Navbar2>
+            <Navbar2 title="SHUBHMUHRAT"></Navbar2>
             <Hero1
-              title="wedding palnner websites"
-              description="hello"
-              imageUrl="https://image.pollinations.ai/prompt/Dynamic%20Visuals%20Celebrating%20the%20Pulse%20of%20Sports%20-%20A%20Kaleidoscope%20of%20Passion%20and%20Action?width=1080&height=1420&nologo=true"
+              title="Honeymoon Planner"
+              description="Plan Your Dream Honeymoon with Us"
+              imageUrl="https://www.wedaways.com/wp-content/uploads/2018/08/honeymoon-planning.jpg"
             />
             <ServiceSection
-              s1={service}
-              s2={service}
-              s3={service}
-              s4={service}
+              s1={service1}
+              s2={service2}
+              s3={service3}
+              s4={service4}
             ></ServiceSection>
             <Footer1 footerline="lorem ispum dolor sit" />
           </div>
