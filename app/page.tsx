@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import Footer1 from "./components/Footer/footer1"
 import PromptInput from "./components/promptInput"
@@ -7,6 +7,7 @@ import Navbar2 from "./components/Navbar/navbar2"
 import ServiceSection from "./components/ServiceSection/serviceSection"
 import PreviewHeader from "./components/previewHeader"
 import Hero1 from "./components/Hero/hero1"
+import { metadata } from "./layout"
 
 export default function Home() {
   interface Service {
@@ -15,6 +16,7 @@ export default function Home() {
   }
 
   interface SiteMetadata {
+    BrandName: string
     Title: string
     Heading: string
     Service1: Service
@@ -22,29 +24,15 @@ export default function Home() {
     Service3: Service
     Service4: Service
     Footer: string
-    "Image Description": string
+    ImageDescription: string
   }
 
   const [siteMetadata, setSiteMetadata] = useState<SiteMetadata | null>(null)
-  const service1: Service = {
-    ServiceTitle: "Customized Itineraries",
-    ServiceDescription: "We create personalized honeymoon itineraries based on your preferences and budget.",
-  }
 
-  const service2: Service = {
-    ServiceTitle:"Luxury Accommodations",
-    ServiceDescription:"We offer a wide range of luxury accommodations to make your honeymoon extra special.",
-  }
-
-  const service3: Service = {
-    ServiceTitle:"Romantic Activities",
-    ServiceDescription:"From candlelit dinners to couples massages, we help you plan the most romantic activities for your honeymoon.",
-  }
-
-  const service4: Service = {
-    ServiceTitle:"Expert Advice",
-    ServiceDescription:"Our team of experienced travel experts are always available to provide you with expert advice and recommendations for your honeymoon.",
-  }
+  // useEffect(() => {
+  //   const element = document.getElementById("site-preview")
+  //   element?.scrollIntoView({ behavior: "smooth" })
+  // }, [siteMetadata?.Heading])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-900">
@@ -55,19 +43,22 @@ export default function Home() {
           <PreviewHeader />
 
           <div className="space-y-4" id="site-preview">
-            <Navbar2 title="SHUBHMUHRAT"></Navbar2>
+            <Navbar2 title={siteMetadata.BrandName}></Navbar2>
             <Hero1
-              title="Honeymoon Planner"
-              description="Plan Your Dream Honeymoon with Us"
-              imageUrl="https://www.wedaways.com/wp-content/uploads/2018/08/honeymoon-planning.jpg"
+              title={siteMetadata.Title}
+              description={
+                siteMetadata.Heading || siteMetadata.ImageDescription || ""
+              }
+              // imageUrl="https://www.wedaways.com/wp-content/uploads/2018/08/honeymoon-planning.jpg"
+              imageUrl={`https://image.pollinations.ai/prompt/Dynamic${siteMetadata.ImageDescription}?width=1420&height=1080&nologo=true`}
             />
             <ServiceSection
-              s1={service1}
-              s2={service2}
-              s3={service3}
-              s4={service4}
+              s1={siteMetadata.Service1}
+              s2={siteMetadata.Service2}
+              s3={siteMetadata.Service3}
+              s4={siteMetadata.Service4}
             ></ServiceSection>
-            <Footer1 footerline="lorem ispum dolor sit" />
+            <Footer1 footerline={siteMetadata.Footer} />
           </div>
         </div>
       )}
