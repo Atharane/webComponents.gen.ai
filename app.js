@@ -2,20 +2,25 @@ const url =
   "https://test-atg-openai.openai.azure.com/openai/deployments/text-davinci-002/completions?api-version=2023-09-15-preview"
 
 const data = {
-  prompt: `Your task is to write content for the home page of a website. The required content is delimited in backticks. For each requirement, provide the output in a structured manner. Later, also provide the same output in JSON format with keys :
+  prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate the Title, Heading, four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
 
-keys = ['title', 'heading', 'desc', 'service1', 'service2', 'service3', 'service4']
-
-Title of the website (At most 3 words and creative)
-Heading (At most 15 words)
-Description of the website (At most 100 words)
-4 Services related to the Topic of the website with description not exceeding 50 words
-Footer containing the copyright and establishment year 2023
-
-The user will provide the topic and description of the website in the format : \${topic}\$, \${description}\$.
-
-User Input : $Sports News Portal$, $I want to get the content for a Sports News Website that will provide latest news updates form the sports world spanning all sorts of sports, players, franchises. I want the Title of the Website to be a mix of Hindi and English words related to sports$`,
-  max_tokens: 100,
+  Format:
+  {
+  "Title": "",
+  "Heading": "",
+  "Service1": {"Service Title": "", "Service Description": ""},
+  "Service2": {"Service Title": "", "Service Description": ""},
+  "Service3": {"Service Title": "", "Service Description": ""},
+  "Service4": {"Service Title": "", "Service Description": ""},
+  "Footer": "",
+  "Image Description": ""
+  }
+  
+  Requirement : 
+  $$$
+  Generate a HoneyMoon Planner Website
+  $$$`,
+  max_tokens: 3000,
   temperature: 0.1,
   frequency_penalty: 0,
   presence_penalty: 0,
@@ -35,5 +40,5 @@ const options = {
 
 fetch(url, options)
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => console.log(JSON.parse(data.choices[0].text)))
   .catch(error => console.error("Error:", error))
