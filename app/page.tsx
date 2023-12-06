@@ -27,8 +27,8 @@ export default function Home() {
 
   const [siteMetadata, setSiteMetadata] = useState<SiteMetadata | null>(null)
   const service: Service = {
-    ServiceTitle: "tits",
-    ServiceDescription: "tits are great",
+    ServiceTitle: "bread",
+    ServiceDescription: "bread is great",
   }
 
   return (
