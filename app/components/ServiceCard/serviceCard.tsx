@@ -3,7 +3,7 @@ import React from 'react'
 const serviceCard = (props:{title:String , description:String}) => {
   return (
     <>
-        <div className="w-80 flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+        <div className=" flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] hover:bg-black/60">
     <div className="p-4 md:p-10">
         <h3 className="text-lg font-bold text-gray-800 dark:text-white">
         {props.title}
