@@ -16,7 +16,7 @@ export default function Home() {
   }
 
   interface SiteMetadata {
-    BrandName: string
+    WebsiteName: string
     Title: string
     Heading: string
     Service1: Service
@@ -43,7 +43,7 @@ export default function Home() {
           <PreviewHeader />
 
           <div className="space-y-4" id="site-preview">
-            <Navbar2 title={siteMetadata.BrandName}></Navbar2>
+            <Navbar2 title={siteMetadata.WebsiteName}></Navbar2>
             <Hero1
               title={siteMetadata.Title}
               description={
