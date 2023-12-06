@@ -39,7 +39,7 @@ export default function Home() {
         <div className="w-full shadow-2xl p-12 bg-white/10 rounded-lg space-y-4">
           <PreviewHeader />
 
-      
+
 
           <div className="space-y-4" id="site-preview">
             <Navbar2 title="HEM"></Navbar2>
