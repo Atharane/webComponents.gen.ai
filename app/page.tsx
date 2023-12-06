@@ -6,6 +6,7 @@ import PromptInput from "./components/promptInput"
 import Navbar2 from "./components/Navbar/navbar2"
 import ServiceSection from "./components/ServiceSection/serviceSection"
 import PreviewHeader from "./components/previewHeader"
+import  Hero1 from "./components/Hero/hero1"
 
 export default function Home() {
   interface Service {
@@ -38,8 +39,12 @@ export default function Home() {
         <div className="w-full shadow-2xl p-12 bg-white/10 rounded-lg space-y-4">
           <PreviewHeader />
 
+      
+
           <div className="space-y-4" id="site-preview">
             <Navbar2 title="HEM"></Navbar2>
+
+            <Hero1 title="hi " description="hello" imageProps="http://"/>
             <ServiceSection
               s1={service}
               s2={service}
