@@ -14,11 +14,11 @@ const PromptInput = ({
     "https://test-atg-openai.openai.azure.com/openai/deployments/text-davinci-002/completions?api-version=2023-09-15-preview"
 
   const data = {
-    prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate the BrandName, Title, Heading , Short Description , four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
+    prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate a relevant Website Name, Heading, short description, four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
 
   Format:
   {
-  "BrandName": "",
+  "WebsiteName": "",
   "Title": "",
   "Heading": "",
   "ShortDescription": "",
