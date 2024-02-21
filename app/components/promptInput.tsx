@@ -29,8 +29,8 @@ const PromptInput = ({
   "Footer": "",
   "ImageDescription": ""
   }
-  
-  Requirement : 
+
+  Requirement :
   $$$
   ${prompt}
   $$$`,
