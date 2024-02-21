@@ -11,7 +11,7 @@ const PromptInput = ({
   const [prompt, setPrompt] = useState("")
 
   const url =
-    "https://test-atg-openai.openai.azure.com/openai/deployments/text-davinci-002/completions?api-version=2023-09-15-preview"
+    "https://gptmodelsmartagent.openai.azure.com/openai/deployments/gpt35turboinstruct/completions?api-version=2023-09-15-preview"
 
   const data = {
     prompt: `You are given the requirement for a website which is delimited with $$$. Based on that creatively generate a relevant Website name, Heading, short description, four services offered, valid footer content and description of a relevant image to be shared as a prompt to an image generating LLM. Add the generated content to the following JSON as values to the corresponding keys.
@@ -34,7 +34,7 @@ const PromptInput = ({
   $$$
   ${prompt}
   $$$`,
-    max_tokens: 3000,
+    max_tokens: 600,
     temperature: 0.1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -47,7 +47,8 @@ const PromptInput = ({
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "api-key": "d92f204755a24159aa49bedda4493e44",
+      // "api-key": "d92f204755a24159aa49bedda4493e44",
+      "api-key": "c5aad6db429c40cf902aef94032cd3ea",
     },
     body: JSON.stringify(data),
   }
