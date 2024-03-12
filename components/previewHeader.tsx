@@ -17,7 +17,7 @@ const PreviewHeader = () => {
       <button
         className="p-2 bg-blue-600 rounded-sm"
         onClick={() => {
-          ;(async () => {
+          ; (async () => {
             const response = await fetch(
               "https://codesandbox.io/api/v1/sandboxes/define?json",
               {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import dummyData from "../../model/dummy.json"
+import fallbackData from "../models/fallback.json"
 
 const PromptInput = ({
   setSiteMetadata,
@@ -78,15 +78,15 @@ const PromptInput = ({
       }
       await new Promise(resolve => setTimeout(resolve, 1000))
     }
-    if (loopLimit === 0) setSiteMetadata(dummyData)
+    if (loopLimit === 0) setSiteMetadata(fallbackData)
   }
 
   return (
     <div className="relative overflow-hidden">
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
         <div className="text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold text-gray-800 dark:text-gray-200">
-            Translate text to code
+          <h1 className="text-4xl sm:text-6xl font-bold text-gray-800 dark:text-gray-200 font-mono">
+            webComponents.genai
           </h1>
 
           {/* <p className="mt-3 text-gray-600 dark:text-gray-400">
