@@ -7,6 +7,7 @@ import Navbar2 from "./components/Navbar/navbar2"
 import ServiceSection from "./components/ServiceSection/serviceSection"
 import PreviewHeader from "./components/previewHeader"
 import Hero1 from "./components/Hero/hero1"
+import Template1 from "./components/Template2/template"
 import { metadata } from "./layout"
 
 export default function Home() {
@@ -38,6 +39,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-slate-900">
       <PromptInput setSiteMetadata={setSiteMetadata} />
+
+      <Template1/>
 
       {siteMetadata && (
         <div className="w-full shadow-2xl p-12 bg-white/10 rounded-lg space-y-4">
