@@ -23,7 +23,7 @@ const PrimaryStatsCard = ({ prompt }: { prompt: string }) => {
             stat1: {statName: "Products Sold", statValue: "72,540"},
             ...
         }
-      
+
         Format:
         {
             "stat1": {"statName": "", "statValue": ""},
@@ -31,8 +31,8 @@ const PrimaryStatsCard = ({ prompt }: { prompt: string }) => {
             "stat3": {"statName": "", "statValue": ""},
             "stat4": {"statName": "", "statValue": ""},
         }
-        
-        REQUIREMENTS : 
+
+        REQUIREMENTS :
         $$$
         ${prompt}
         $$$`;

@@ -39,7 +39,7 @@ const PrimaryBlogpost = ({ prompt }: { prompt: string }) => {
             blog1: {title: "We love what we do", shortDescription: "The best way to get started is to quit talking and begin doing. We are what we repeatedly do. Excellence, then, is not an act, but a habit."},
             ...
         }
-      
+
         Format:
         {
             blog1: {title: "" , shortDescription: ""},
@@ -47,8 +47,8 @@ const PrimaryBlogpost = ({ prompt }: { prompt: string }) => {
             blog3: {title: "" , shortDescription: ""},
             blog4: {title: "" , shortDescription: ""},
         }
-        
-        REQUIREMENTS : 
+
+        REQUIREMENTS :
         $$$
         ${prompt}
         $$$`;
