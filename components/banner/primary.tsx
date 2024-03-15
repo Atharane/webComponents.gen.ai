@@ -17,8 +17,8 @@ const PrimaryBanner = ({ prompt }: { prompt: string }) => {
         $$$`;
       try {
         const response = await failsafeLLMResponse(customPrompt, Boolean);
-        setComponentMetadata(response);
         !response && setComponentMetadata(fallback);
+        response && setComponentMetadata(response);
       } catch (error) {
         console.error('error:', error);
       }

@@ -11,6 +11,8 @@ import ServiceSection from '@/components/services/one';
 import HeroWishlist from '@/components/hero/wishlist';
 import PrimaryStatsCard from '@/components/stats/primary';
 import PrimaryBanner from '@/components/banner/primary';
+import PrimaryFAQ from '@/components/faq/primary';
+import PrimaryBlogpost from '@/components/blogposts/primary';
 
 type components =
   | 'STATS_CARD'
@@ -45,6 +47,8 @@ export default function DashboardClient({ email }: { email?: string }) {
             <PrimaryBanner prompt={prompt} />
             <HeroWishlist prompt={prompt} />
             <PrimaryStatsCard prompt={prompt} />
+            <PrimaryFAQ prompt={prompt} />
+            <PrimaryBlogpost prompt={prompt} />
 
             {/* {componentsArray.map((component) => {
               switch (component) {
