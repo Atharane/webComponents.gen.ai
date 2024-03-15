@@ -73,7 +73,7 @@ export default function DashboardClient({ email }: { email?: string }) {
           <Primary prompt={prompt}/>
         </div>
       )}
-      
+
     </main>
   );
 }

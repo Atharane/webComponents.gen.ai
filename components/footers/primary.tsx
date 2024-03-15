@@ -27,15 +27,15 @@ const primary = ({ prompt }: { prompt: string }) => {
             stat1: {statName: " This is a great company  , best experience ever", statValue: "Josh Taylor"},
             ...
         }
-      
+
         Format:
         {
             "stat1": {"statName": "", "statValue": ""},
             "stat2": {"statName": "", "statValue": ""},
             "stat3": {"statName": "", "statValue": ""},
         }
-        
-        REQUIREMENTS : 
+
+        REQUIREMENTS :
         $$$
         ${prompt}
         $$$`;
