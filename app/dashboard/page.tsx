@@ -10,8 +10,8 @@ export default async function PrivatePage() {
 
   return (
     <div>
-      <h1>welcome {data?.user?.email}</h1>
-      <DashboardClient />
+      {/* <h1>welcome {data?.user?.email}</h1> */}
+      <DashboardClient email={data?.user?.email} />
     </div>
   );
 }
