@@ -39,11 +39,11 @@ const fetchLLMResponse = async (
 export const failsafeLLMResponse = async (
   prompt: string,
   validator: (response: string) => boolean,
-  retries = 50
+  retries = 4
 ) => {
   while (retries--) {
     const response = await fetchLLMResponse(prompt);
-    console.log("🚀 ~ response:", response)
+    console.log("broken response:", response)
     if (validator(response)) return response;
     await new Promise((resolve) => setTimeout(resolve, 500)); // backoff
   }
