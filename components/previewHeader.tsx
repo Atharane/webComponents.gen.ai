@@ -7,7 +7,7 @@ const PreviewHeader = () => {
   }
 
   return (
-    <div className="preview-header bg-slate-200/20 rounded-md p-2 flex gap-2">
+    <div className="bg-slate-200/20 rounded-md p-2 flex gap-2">
       <button
         onClick={copyGeneratedSiteCode}
         className="p-2 bg-blue-600 rounded-sm"
