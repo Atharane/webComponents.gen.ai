@@ -1,9 +1,10 @@
-import GlobalNavbar from '@/components/global/navbar';
+// import GlobalNavbar from '@/components/global/navbar';
+import Primary from '../components/footers/primary';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center m-8 border">
-      <GlobalNavbar />
+      {/* <GlobalNavbar /> */}
       <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-56 self-center">
         {/* text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-neutral-600 */}
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-400 to-neutral-800 bg-opacity-50">
@@ -40,6 +41,8 @@ export default function Home() {
           </svg>
         </a>
       </div>
+
+
     </main>
   );
 }

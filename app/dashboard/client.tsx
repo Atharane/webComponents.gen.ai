@@ -11,6 +11,8 @@ import ServiceSection from '@/components/services/one';
 import HeroWishlist from '@/components/hero/wishlist';
 import PrimaryStatsCard from '@/components/stats/primary';
 import PrimaryBanner from '@/components/banner/primary';
+
+import Primary from '../../components/footers/primary';
 import PrimaryFAQ from '@/components/faq/primary';
 import PrimaryBlogpost from '@/components/blogposts/primary';
 
@@ -40,6 +42,8 @@ export default function DashboardClient({ email }: { email?: string }) {
         setComponentArray={setComponentsArray}
       />
 
+
+
       {Boolean(componentsArray?.length) && (
         <div className="w-full border p-4 bg-white/10 rounded-lg space-y-4">
           <PreviewHeader />
@@ -66,8 +70,10 @@ export default function DashboardClient({ email }: { email?: string }) {
                   return null;
               } */}
           </div>
+          <Primary prompt={prompt}/>
         </div>
       )}
+      
     </main>
   );
 }

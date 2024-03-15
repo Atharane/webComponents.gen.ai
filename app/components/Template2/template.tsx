@@ -1,10 +1,8 @@
 import React from 'react'
-import Navbar2 from '../Navbar/navbar2'
-import PreviewHeader from '../previewHeader'
 import Hero2 from '../Hero/hero2'
-import ServiceSection from '../ServiceSection/serviceSection'
-import Footer1 from '../Footer/footer1'
-
+import PreviewHeader from "../../../components/previewHeader"
+import Footer1 from '../../../components/footers/one'
+import Navbar2 from '../../../components/navbar/one'
 const template = () => {
   return (
     <>
