@@ -39,8 +39,8 @@ const PrimaryStatsCard = ({ prompt }: { prompt: string }) => {
       try {
         const response = await failsafeLLMResponse(customPrompt, jsonValidator);
         console.log('🚀 ~ fetchData ~ response:', response);
-        setComponentMetadata(JSON.parse(response));
         !response && setComponentMetadata(fallback);
+        response && setComponentMetadata(JSON.parse(response));
       } catch (error) {
         console.error('error:', error);
       }
@@ -49,7 +49,100 @@ const PrimaryStatsCard = ({ prompt }: { prompt: string }) => {
     fetchData();
   }, []);
 
-  if (!componentMetadata) return <h1>loading....</h1>;
+  if (componentMetadata) {
+    return (
+      <div className="flex justify-around mt-20">
+        <div
+          role="status"
+          className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+        >
+          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2.5"></div>
+          <div className="w-48 h-2 mb-10 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          <div className="flex items-baseline mt-4 ">
+            <div className="w-full bg-gray-200 rounded-t-lg h-28 dark:bg-gray-700"></div>
+            <div className="w-full h-32 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-12 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-24 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+          </div>
+          <span className="sr-only">loading...</span>
+        </div>
+        <div
+          role="status"
+          className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+        >
+          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2.5"></div>
+          <div className="w-48 h-2 mb-10 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          <div className="flex items-baseline mt-4 ">
+            <div className="w-full bg-gray-200 rounded-t-lg h-28 dark:bg-gray-700"></div>
+            <div className="w-full h-32 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-12 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-24 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+          </div>
+          <span className="sr-only">loading...</span>
+        </div>
+
+        <div
+          role="status"
+          className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+        >
+          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2.5"></div>
+          <div className="w-48 h-2 mb-10 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          <div className="flex items-baseline mt-4">
+            <div className="w-full bg-gray-200 rounded-t-lg h-28 dark:bg-gray-700"></div>
+            <div className="w-full h-32 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-12 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-24 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+          </div>
+          <span className="sr-only">loading...</span>
+        </div>
+
+        <div
+          role="status"
+          className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+        >
+          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2.5"></div>
+          <div className="w-48 h-2 mb-10 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          <div className="flex items-baseline mt-4">
+            <div className="w-full bg-gray-200 rounded-t-lg h-28 dark:bg-gray-700"></div>
+            <div className="w-full h-32 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-12 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-24 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+          </div>
+          <span className="sr-only">loading...</span>
+        </div>
+
+        <div
+          role="status"
+          className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+        >
+          <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2.5"></div>
+          <div className="w-48 h-2 mb-10 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+          <div className="flex items-baseline mt-4">
+            <div className="w-full bg-gray-200 rounded-t-lg h-28 dark:bg-gray-700"></div>
+            <div className="w-full h-32 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-12 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-24 ms-6 dark:bg-gray-700"></div>
+            <div className="w-full bg-gray-200 rounded-t-lg h-40 ms-6 dark:bg-gray-700"></div>
+          </div>
+          <span className="sr-only">loading...</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
