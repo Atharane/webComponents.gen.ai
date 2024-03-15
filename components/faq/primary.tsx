@@ -39,7 +39,7 @@ const PrimaryFAQ = ({ prompt }: { prompt: string }) => {
             faq1: {question: "Are we homemade?", answer: "Yes, we are. We are a team of highly skilled professionals who are dedicated to their work."},
             ...
         }
-      
+
         Format:
         {
             "faq1": {"question": "", "answer": ""},
@@ -47,8 +47,8 @@ const PrimaryFAQ = ({ prompt }: { prompt: string }) => {
             "faq3": {"question": "", "answer": ""},
             "faq4": {"question": "", "answer": ""},
         }
-        
-        REQUIREMENTS : 
+
+        REQUIREMENTS :
         $$$
         ${prompt}
         $$$`;
