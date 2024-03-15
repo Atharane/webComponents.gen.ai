@@ -11,7 +11,7 @@ const PrimaryBanner = ({ prompt }: { prompt: string }) => {
     const fetchData = async () => {
       setComponentMetadata('');
       const customPrompt = `Given the requirement for a website. Based on that creatively generate a 6-12 word of a tagline for the announcement banner, reply with just the tagline, nothing else.
-        REQUIREMENTS : 
+        REQUIREMENTS :
         $$$
         ${prompt}
         $$$`;
