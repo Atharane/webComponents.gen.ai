@@ -9,6 +9,8 @@ import PromptInput from '@/components/promptInput';
 import NavbarTwo from '@/components/navbar/two';
 import ServiceSection from '@/components/services/one';
 import HeroWishlist from '@/components/hero/wishlist';
+import PrimaryStatsCard from '@/components/stats/primary';
+import PrimaryBanner from '@/components/banner/primary';
 
 type components =
   | 'STATS_CARD'
@@ -40,7 +42,10 @@ export default function DashboardClient({ email }: { email?: string }) {
         <div className="w-full border p-4 bg-white/10 rounded-lg space-y-4">
           <PreviewHeader />
           <div className="space-y-4" id="site-preview">
+            <PrimaryBanner prompt={prompt} />
             <HeroWishlist prompt={prompt} />
+            <PrimaryStatsCard prompt={prompt} />
+
             {/* {componentsArray.map((component) => {
               switch (component) {
                 case 'STATS_CARD':

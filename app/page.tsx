@@ -1,5 +1,4 @@
 import GlobalNavbar from '@/components/global/navbar';
-import { Spotlight } from '@/components/spotlight';
 
 export default function Home() {
   return (

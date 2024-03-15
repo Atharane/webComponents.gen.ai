@@ -1,9 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import fallbackData from '../models/fallback.json';
 import { failsafeLLMResponse } from '@/utils/prompts';
-import { jsonValidator } from '@/utils/generics';
 
 const PromptInput = ({
   prompt,
