@@ -27,9 +27,17 @@ const PrimaryBanner = ({ prompt }: { prompt: string }) => {
     fetchData();
   }, []);
 
-  if (!componentMetadata) return <h1>loading....</h1>;
+  if (!componentMetadata) {
+    return (
+      <div role="status" className="animate-pulse">
+        <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 max-w-[640px] mb-2.5 mx-auto"></div>
+        <div className="h-2.5 mx-auto bg-gray-300 rounded-full dark:bg-gray-700 max-w-[540px]"></div>
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
   return (
-    <div className="bg-gradient-to-r from-purple-600 to-blue-400 rounded">
+    <div className="bg-gradient-to-r from-purple-600 to-blue-400 rounded mb-40">
       <div className="max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2">
           <div className="text-center md:text-start md:order-2 md:flex md:justify-end md:items-center">
