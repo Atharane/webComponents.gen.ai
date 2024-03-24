@@ -2,6 +2,8 @@ import React from 'react';
 import Hero2 from '../Hero/hero2';
 import Footer1 from '../../../components/footers/one';
 import Navbar2 from '../../../components/navbar/one';
+<!-- import PreviewHeader from "../../../components/previewHeader" -->
+
 const template = () => {
   return (
     <>

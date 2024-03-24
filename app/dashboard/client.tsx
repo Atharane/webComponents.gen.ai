@@ -44,6 +44,7 @@ export default function DashboardClient({ email }: { email?: string }) {
 
       <BreadCrumbs component={componentsArray} />
 
+
       {Boolean(componentsArray?.length) && (
         <div className="w-full border p-4 bg-white/10 rounded-lg space-y-4">
           <div className="space-y-4" id="site-preview">
@@ -120,6 +121,7 @@ export default function DashboardClient({ email }: { email?: string }) {
           <Primary prompt={prompt} />
         </div>
       )}
+      
     </main>
   );
 }
