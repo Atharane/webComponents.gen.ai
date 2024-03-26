@@ -19,7 +19,7 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
     const fetchData = async () => {
       setComponentMetadata(null);
       const customPrompt = `Given the requirement for a website. Based on that creatively generate a relevant website name, short description, form placeholder, CTA. Add the generated content to the following JSON as values to the corresponding keys.
-    
+
       Format:
       {
       "websiteName": "",
@@ -27,8 +27,8 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
       "formPlaceholder": "",
       "cta": ""
       }
-      
-      REQUIREMENTS : 
+
+      REQUIREMENTS :
       $$$
       ${prompt}
       $$$`;
