@@ -19,7 +19,7 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
     const fetchData = async () => {
       setComponentMetadata(null);
       const customPrompt = `Given the requirement for a website. Based on that creatively generate a relevant website name, short description, form placeholder, CTA. Add the generated content to the following JSON as values to the corresponding keys.
-    
+
       Format:
       {
       "websiteName": "",
@@ -27,8 +27,8 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
       "formPlaceholder": "",
       "cta": ""
       }
-      
-      REQUIREMENTS : 
+
+      REQUIREMENTS :
       $$$
       ${prompt}
       $$$`;
@@ -266,7 +266,7 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
         {
           modal ? <>
           <div className='z-2 rounded-xl bg-slate-100 '>
-          Didn't Like the image change , generate a new image ? 
+          Didn't Like the image change , generate a new image ?
           <button>Build new </button>
           </div>
           </>
@@ -278,10 +278,10 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
             onClick={()=>setModal(!modal)}
             alt={prompt}
           />
-          
+
         </div>
 
-        
+
 
       </div>
     </div>
