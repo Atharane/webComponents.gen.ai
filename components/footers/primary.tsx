@@ -3,7 +3,6 @@ import React from 'react'
 import { useState , useEffect } from 'react';
 import { jsonValidator } from '@/utils/generics';
 import { failsafeLLMResponse } from '@/utils/prompts';
-import { log } from 'console';
 
 
 const fallback = {
