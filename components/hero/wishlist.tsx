@@ -12,6 +12,9 @@ const fallback = {
 const HeroWishlist = ({ prompt }: { prompt: string }) => {
   const [componentMetadata, setComponentMetadata] = useState<any>(null);
 
+  const [imageUrl , setImageUrl] = useState("");
+  const [modal , setModal] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       setComponentMetadata(null);
@@ -39,9 +42,14 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
     };
 
     fetchData();
+    const cleanImageUrl = componentMetadata?.websiteName?.replace(/['"%?]/g, '');
+
+  setImageUrl(`https://image.pollinations.ai/prompt/${cleanImageUrl}?width=1080&height=720&nologo=true`);
+
   }, []);
 
-  const cleanImageUrl = componentMetadata?.websiteName?.replace(/['"%?]/g, '');
+  // const cleanImageUrl = componentMetadata?.websiteName?.replace(/['"%?]/g, '');
+
 
   if (!componentMetadata) {
     return (
@@ -254,13 +262,27 @@ const HeroWishlist = ({ prompt }: { prompt: string }) => {
           </div>
         </div>
 
-        <div className="lg:col-span-4 mt-10 lg:mt-0">
+        <div className="lg:col-span-4 mt-10 lg:mt-0 " >
+        {
+          modal ? <>
+          <div className='z-2 rounded-xl bg-slate-100 '>
+          Didn't Like the image change , generate a new image ? 
+          <button>Build new </button>
+          </div>
+          </>
+          : null
+        }
           <img
             className="w-full rounded-xl"
-            src={`https://image.pollinations.ai/prompt/${cleanImageUrl}?width=1080&height=720&nologo=true`}
+            src={imageUrl}
+            onClick={()=>setModal(!modal)}
             alt={prompt}
           />
+          
         </div>
+
+        
+
       </div>
     </div>
   );
